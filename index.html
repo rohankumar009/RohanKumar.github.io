@@ -1,294 +1,450 @@
-<!doctype html>
-<html lang="en" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .maintenance-message {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="maintenance-message">
+        <h1>Under Maintenance</h1>
+        <p>Will be back soon! 👨‍💻</p>
+
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohan Kumar | Portfolio</title>
-    <meta
-      name="description"
-      content="Software Engineer portfolio for Rohan Kumar - scalable systems, product thinking, and clean execution."
-    />
-    <script>
-      tailwind = window.tailwind || {};
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            boxShadow: {
-              glow: '0 0 50px rgba(163,163,163,0.18)'
-            }
-          }
-        }
-      };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
   </head>
-  <body class="bg-[#f5f5f5] text-neutral-800 antialiased dark:bg-neutral-950 dark:text-neutral-300">
-    <header class="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-[#f5f5f5]/80 backdrop-blur-md dark:border-white/10 dark:bg-neutral-950/70">
-      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#hero" class="text-sm font-semibold tracking-wide text-neutral-900 transition duration-200 hover:text-neutral-700 dark:text-neutral-100 dark:hover:text-white">Rohan Kumar</a>
-
-        <div class="flex items-center gap-2">
-          <button id="theme-toggle" type="button" class="rounded-md px-3 py-2 text-xs font-medium text-neutral-800 transition duration-200 hover:bg-black/5 dark:text-neutral-200 dark:hover:bg-white/10" aria-label="Toggle dark mode">Dark</button>
-          <button id="menu-toggle" type="button" class="rounded-md p-2 text-neutral-800 transition duration-200 hover:bg-black/5 md:hidden dark:text-neutral-200 dark:hover:bg-white/10" aria-label="Toggle navigation">
-            <span class="block h-0.5 w-6 bg-current"></span>
-            <span class="mt-1.5 block h-0.5 w-6 bg-current"></span>
-            <span class="mt-1.5 block h-0.5 w-6 bg-current"></span>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Rohan Kumar</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Rohan Kumar</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Rohan Kumar</h1>
+        <p class="section__text__p2">An Aspring Software Engineer</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/resume-example.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
           </button>
         </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/rohankumar09/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/rohankumar009'"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More About Me</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/about-pic.png"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>Bachelors Of Science in Computer Science and Data Science<br /></p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+            Hi, my name is Rohan!
 
-        <ul class="hidden items-center gap-6 md:flex">
-          <li><a href="#hero" class="text-sm text-neutral-700 transition duration-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">Home</a></li>
-          <li><a href="#experience" class="text-sm text-neutral-700 transition duration-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">Experience</a></li>
-          <li><a href="#skills" class="text-sm text-neutral-700 transition duration-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">Skills</a></li>
-          <li><a href="#projects" class="text-sm text-neutral-700 transition duration-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">Projects</a></li>
-          <li><a href="#blog" class="text-sm text-neutral-700 transition duration-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">Blog</a></li>
-          <li><a href="#contact" class="text-sm text-neutral-700 transition duration-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">Contact</a></li>
-        </ul>
+            I'm a Junior at the University of Minnesota- Twin Cities pursuing a double major degree in the vast field of Computer Science and Data Science.
+            <br />
+            <br />
+            I have a mindset and personality which is devoted to success for myself and others around me. I enjoy being able to work in collaborative groups that not only benefit me but a variety of different contributors who share similar goals. I am very passionate about the work that I do and how it could potentially impact many people in the future.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Skills</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Programming</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Python</h3>
+                  <p>Intermediat</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Java</h3>
+                  <p>Intermediat</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>HTML</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>JavaScript</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>CSS</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>C Programming</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Technologies</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Pandas</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Pygame</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Mongo DB</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Node JS</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Express JS</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Git/Github</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      />
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-1.png"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project One</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-2.png"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project Two</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-3.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project Three</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:kumarrohan7110@gmail.com">kumarrohan7110@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/rohankumar09/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
       </nav>
-
-      <div id="mobile-menu" class="hidden border-t border-black/5 bg-[#f5f5f5] px-6 py-4 md:hidden dark:border-white/10 dark:bg-neutral-950">
-        <ul class="space-y-3">
-          <li><a href="#hero" class="mobile-link block text-sm text-neutral-700 transition duration-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">Home</a></li>
-          <li><a href="#experience" class="mobile-link block text-sm text-neutral-700 transition duration-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">Experience</a></li>
-          <li><a href="#skills" class="mobile-link block text-sm text-neutral-700 transition duration-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">Skills</a></li>
-          <li><a href="#projects" class="mobile-link block text-sm text-neutral-700 transition duration-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">Projects</a></li>
-          <li><a href="#blog" class="mobile-link block text-sm text-neutral-700 transition duration-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">Blog</a></li>
-          <li><a href="#contact" class="mobile-link block text-sm text-neutral-700 transition duration-200 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">Contact</a></li>
-        </ul>
-      </div>
-    </header>
-
-    <main>
-      <section id="hero" class="scroll-mt-24">
-        <div class="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 pt-36 md:grid-cols-2">
-          <div>
-            <p class="text-sm font-medium uppercase tracking-[0.15em] text-neutral-600 dark:text-neutral-400">Hey, I'm Rohan.</p>
-            <h1 class="mt-4 text-4xl font-bold leading-tight text-neutral-900 md:text-6xl dark:text-neutral-100">Software Engineer building scalable systems and thoughtful products.</h1>
-            <p class="mt-6 max-w-xl text-base leading-relaxed text-neutral-700 dark:text-neutral-300">I'm a Computer Science student at the University of Minnesota - Twin Cities graduating Dec 2025, with experience spanning engineering, analytics, and product leadership.</p>
-            <div class="mt-8 flex flex-wrap gap-3">
-              <a href="#projects" class="rounded-lg bg-neutral-900 px-5 py-3 text-sm font-medium text-white transition duration-200 hover:-translate-y-0.5 hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white">View Work</a>
-              <a href="./public/resume.pdf" download class="rounded-lg border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-800 transition duration-200 hover:-translate-y-0.5 hover:border-neutral-500 dark:border-neutral-700 dark:text-neutral-200 dark:hover:border-neutral-500">Resume</a>
-              <a href="#contact" class="rounded-lg border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-800 transition duration-200 hover:-translate-y-0.5 hover:border-neutral-500 dark:border-neutral-700 dark:text-neutral-200 dark:hover:border-neutral-500">Contact</a>
-            </div>
-          </div>
-          <div class="flex justify-center md:justify-end">
-            <div class="relative h-64 w-64 overflow-hidden rounded-full border border-white/10 shadow-xl shadow-black/10 dark:shadow-glow md:h-80 md:w-80">
-              <img src="./public/profile.svg" alt="Rohan Kumar profile" class="h-full w-full object-cover" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="identity" class="scroll-mt-24">
-        <div class="mx-auto max-w-6xl px-6 py-24">
-          <div class="grid gap-6 md:grid-cols-3">
-            <article class="rounded-xl bg-neutral-200/70 p-8 transition duration-200 hover:scale-[1.01] dark:bg-neutral-900">
-              <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Engineer</h3>
-              <p class="mt-3 leading-relaxed text-neutral-700 dark:text-neutral-300">Focused on backend systems, distributed systems, data pipelines, and performance optimization.</p>
-            </article>
-            <article class="rounded-xl bg-neutral-200/70 p-8 transition duration-200 hover:scale-[1.01] dark:bg-neutral-900">
-              <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Product Thinker</h3>
-              <p class="mt-3 leading-relaxed text-neutral-700 dark:text-neutral-300">Grounded in user research, iteration, Agile execution, cross-functional collaboration, and stakeholder alignment.</p>
-            </article>
-            <article class="rounded-xl bg-neutral-200/70 p-8 transition duration-200 hover:scale-[1.01] dark:bg-neutral-900">
-              <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Builder</h3>
-              <p class="mt-3 leading-relaxed text-neutral-700 dark:text-neutral-300">Driven by teaching 200+ students, leading teams, and coordinating large initiatives with measurable outcomes.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="scroll-mt-24">
-        <div class="mx-auto max-w-6xl px-6 py-24">
-          <div class="max-w-4xl">
-            <h2 class="text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">About</h2>
-            <p class="mt-6 leading-relaxed text-neutral-700 dark:text-neutral-300">I'm a Computer Science student at the University of Minnesota - Twin Cities, graduating in December 2025. My work blends engineering execution with product ownership, from data systems and analytics to full-stack delivery and team coordination.</p>
-            <p class="mt-4 leading-relaxed text-neutral-700 dark:text-neutral-300">Outside class, I stay active in ACM, Chess, Game Dev, Lettuce Club, Run Club, Badminton, SASE, CodePath, NSBE, and SHPE. These communities sharpen my technical foundation and my ability to lead within diverse, fast-moving teams.</p>
-            <p class="mt-4 leading-relaxed text-neutral-700 dark:text-neutral-300">I care deeply about teaching, systems thinking, and end-to-end ownership. My long-term ambition is to build reliable software that scales with real users while mentoring others to engineer with clarity and purpose.</p>
-            <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <div class="rounded-lg border border-black/10 bg-white p-4 text-sm font-medium text-neutral-700 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-200">200+ students taught</div>
-              <div class="rounded-lg border border-black/10 bg-white p-4 text-sm font-medium text-neutral-700 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-200">200,000+ records processed</div>
-              <div class="rounded-lg border border-black/10 bg-white p-4 text-sm font-medium text-neutral-700 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-200">35,000+ user app impact</div>
-              <div class="rounded-lg border border-black/10 bg-white p-4 text-sm font-medium text-neutral-700 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-200">67.5% ML accuracy</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="experience" class="scroll-mt-24">
-        <div class="mx-auto max-w-6xl px-6 py-24">
-          <h2 class="text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">Experience</h2>
-          <div class="relative mt-10 space-y-6">
-            <div class="absolute bottom-2 left-[0.45rem] top-2 hidden w-px bg-neutral-300 dark:bg-neutral-700 md:block"></div>
-
-            <article class="relative rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20 md:ml-14">
-              <div class="absolute -left-[2.875rem] top-8 hidden h-4 w-4 rounded-full border-2 border-neutral-900 bg-[#f5f5f5] dark:border-neutral-200 dark:bg-neutral-950 md:block"></div>
-              <p class="text-sm font-medium uppercase tracking-[0.1em] text-neutral-500 dark:text-neutral-400">Sep 2025 - Dec 2025</p>
-              <h3 class="mt-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Project Manager - Aerodynamics & Aviation Engagement Program</h3>
-              <p class="mt-1 text-sm font-medium text-neutral-600 dark:text-neutral-400">Air Care Alliance</p>
-              <p class="mt-4 leading-relaxed text-neutral-700 dark:text-neutral-300">Directed a multi-stakeholder initiative coordinating logistics for a 200+ engineering competition. Managed full project lifecycle including risk mitigation, scheduling, budgeting, vendor alignment, marketing, and execution. Integrated cross-functional deliverables into a unified event plan. Delivered post-event analysis and reporting to stakeholders.</p>
-            </article>
-
-            <article class="relative rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20 md:ml-14">
-              <div class="absolute -left-[2.875rem] top-8 hidden h-4 w-4 rounded-full border-2 border-neutral-900 bg-[#f5f5f5] dark:border-neutral-200 dark:bg-neutral-950 md:block"></div>
-              <p class="text-sm font-medium uppercase tracking-[0.1em] text-neutral-500 dark:text-neutral-400">Aug 2023 - Jun 2025</p>
-              <h3 class="mt-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Computer Science Teaching Assistant</h3>
-              <p class="mt-1 text-sm font-medium text-neutral-600 dark:text-neutral-400">University of Minnesota</p>
-              <p class="mt-4 leading-relaxed text-neutral-700 dark:text-neutral-300">Led weekly lab sessions for 200+ students in Java across Software Design, Data Structures, and Data Processing. Built automated grading tools, refined rubrics, reduced repetitive regrade requests, graded projects. Conducted review sessions and code troubleshooting in office hours.</p>
-            </article>
-
-            <article class="relative rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20 md:ml-14">
-              <div class="absolute -left-[2.875rem] top-8 hidden h-4 w-4 rounded-full border-2 border-neutral-900 bg-[#f5f5f5] dark:border-neutral-200 dark:bg-neutral-950 md:block"></div>
-              <p class="text-sm font-medium uppercase tracking-[0.1em] text-neutral-500 dark:text-neutral-400">Aug 2023 - Jun 2025</p>
-              <h3 class="mt-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Bioproducts & Biosystems Engineering Teaching Assistant</h3>
-              <p class="mt-1 text-sm font-medium text-neutral-600 dark:text-neutral-400">University of Minnesota</p>
-              <p class="mt-4 leading-relaxed text-neutral-700 dark:text-neutral-300">Co-authored assignments and solution sets to clarify expectations and reduce confusion. Delivered weekly written feedback to 250+ students. Improved turnaround efficiency and instructional clarity.</p>
-            </article>
-
-            <article class="relative rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20 md:ml-14">
-              <div class="absolute -left-[2.875rem] top-8 hidden h-4 w-4 rounded-full border-2 border-neutral-900 bg-[#f5f5f5] dark:border-neutral-200 dark:bg-neutral-950 md:block"></div>
-              <p class="text-sm font-medium uppercase tracking-[0.1em] text-neutral-500 dark:text-neutral-400">May 2022 - Aug 2022</p>
-              <h3 class="mt-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Data Analyst Intern</h3>
-              <p class="mt-1 text-sm font-medium text-neutral-600 dark:text-neutral-400">University of Minnesota Undergraduate Office of Admissions</p>
-              <p class="mt-4 leading-relaxed text-neutral-700 dark:text-neutral-300">Standardized backlog of 200,000+ student records using Pandas and NumPy, improving data accuracy by 90%. Built Power BI dashboards analyzing applicant demographics, funnel metrics, and year-to-year variance. Presented insights weekly in Agile Scrum teams.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" class="scroll-mt-24">
-        <div class="mx-auto max-w-6xl px-6 py-24">
-          <h2 class="text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">Skills</h2>
-          <div class="mt-10 space-y-8">
-            <div>
-              <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">Programming</h3>
-              <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <div class="skill-tile">Python</div><div class="skill-tile">R</div><div class="skill-tile">Java</div><div class="skill-tile">HTML/CSS</div><div class="skill-tile">JavaScript</div><div class="skill-tile">C</div><div class="skill-tile">C++</div><div class="skill-tile">TypeScript</div><div class="skill-tile">SQL</div>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">Frameworks &amp; ML</h3>
-              <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <div class="skill-tile">Pandas</div><div class="skill-tile">NumPy</div><div class="skill-tile">Matplotlib</div><div class="skill-tile">Scikit-learn</div><div class="skill-tile">Seaborn</div><div class="skill-tile">Predictive Modeling</div><div class="skill-tile">JUnit</div><div class="skill-tile">JavaFX</div><div class="skill-tile">PyTorch</div><div class="skill-tile">Pygame</div>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">Data &amp; Tools</h3>
-              <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <div class="skill-tile">Git</div><div class="skill-tile">GitHub</div><div class="skill-tile">Docker</div><div class="skill-tile">Jira</div><div class="skill-tile">Agile</div><div class="skill-tile">Scrum</div><div class="skill-tile">MongoDB</div><div class="skill-tile">Unix/Linux</div><div class="skill-tile">macOS</div><div class="skill-tile">Windows</div>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">Design &amp; Analytics</h3>
-              <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <div class="skill-tile">Figma</div><div class="skill-tile">Power BI</div><div class="skill-tile">Qualtrics</div><div class="skill-tile">Excel</div><div class="skill-tile">MS Office</div><div class="skill-tile">Notion</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="scroll-mt-24">
-        <div class="mx-auto max-w-6xl px-6 py-24">
-          <h2 class="text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">Projects</h2>
-          <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <article class="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:-translate-y-0.5 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20 md:col-span-2 lg:col-span-2">
-              <p class="text-sm font-medium uppercase tracking-[0.1em] text-neutral-500 dark:text-neutral-400">Jun 2024 - Aug 2024</p>
-              <h3 class="mt-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">EPL Predictor</h3>
-              <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">Python, Pandas, Scikit-learn, Matplotlib</p>
-              <p class="mt-4 leading-relaxed text-neutral-700 dark:text-neutral-300">Built machine learning pipeline predicting EPL match outcomes with 67.5% accuracy. Implemented preprocessing, feature engineering, Random Forest model, cross-validation, hyperparameter tuning.</p>
-            </article>
-            <article class="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:-translate-y-0.5 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20">
-              <p class="text-sm font-medium uppercase tracking-[0.1em] text-neutral-500 dark:text-neutral-400">Jan 2024 - May 2024</p>
-              <h3 class="mt-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">Gopher Walk</h3>
-              <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">Figma, Docker, GitHub, HTML, CSS</p>
-              <p class="mt-4 leading-relaxed text-neutral-700 dark:text-neutral-300">Designed and developed mapping app improving campus navigation for 35,000+ users. Conducted surveys and interviews using Google Forms and Qualtrics. Integrated feedback via Agile iteration. Used Docker for streamlined deployment.</p>
-            </article>
-            <article class="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:-translate-y-0.5 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20">
-              <p class="text-sm font-medium uppercase tracking-[0.1em] text-neutral-500 dark:text-neutral-400">Jan 2023</p>
-              <h3 class="mt-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">Minerva</h3>
-              <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">Google Maps API, JavaScript, Node.js, Express.js, MongoDB, Docker</p>
-              <p class="mt-4 leading-relaxed text-neutral-700 dark:text-neutral-300">Led team of 3 developing full-stack application. Acted as Product Manager and Front-End Developer. Defined product requirements, managed timeline, coordinated testing, implemented MongoDB personalization.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="philosophy" class="scroll-mt-24">
-        <div class="mx-auto max-w-6xl px-6 py-24">
-          <div class="mx-auto max-w-3xl text-center">
-            <h2 class="text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">Philosophy</h2>
-            <div class="mt-8 space-y-3">
-              <p class="text-lg text-neutral-700 dark:text-neutral-300">Software should reduce friction.</p>
-              <p class="text-lg text-neutral-700 dark:text-neutral-300">Simplicity scales.</p>
-              <p class="text-lg text-neutral-700 dark:text-neutral-300">Systems outlive features.</p>
-              <p class="text-lg text-neutral-700 dark:text-neutral-300">Teaching sharpens thinking.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="blog" class="scroll-mt-24">
-        <div class="mx-auto max-w-6xl px-6 py-24">
-          <div class="flex items-end justify-between gap-4">
-            <h2 class="text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">Blog Preview</h2>
-            <p class="text-sm text-neutral-500 dark:text-neutral-400">Ready for future MDX integration</p>
-          </div>
-          <div class="mt-10 grid gap-6 md:grid-cols-3">
-            <article class="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:-translate-y-0.5 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20">
-              <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Internship Recruiting Breakdown</h3>
-              <p class="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">Placeholder post card prepared for future long-form technical writing.</p>
-            </article>
-            <article class="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:-translate-y-0.5 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20">
-              <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">What Teaching 200+ Students Taught Me</h3>
-              <p class="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">Placeholder post card prepared for future long-form technical writing.</p>
-            </article>
-            <article class="rounded-xl border border-black/10 bg-white p-6 transition duration-200 hover:-translate-y-0.5 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20">
-              <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Designing Systems Under Constraint</h3>
-              <p class="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">Placeholder post card prepared for future long-form technical writing.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="scroll-mt-24">
-        <div class="mx-auto max-w-6xl px-6 py-24">
-          <div class="max-w-3xl">
-            <h2 class="text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">Contact</h2>
-            <p class="mt-4 text-neutral-700 dark:text-neutral-300">Open to software engineering, product, and analytics opportunities.</p>
-            <div class="mt-8 grid gap-4 sm:grid-cols-2">
-              <a href="mailto:kumar634@umn.edu" class="rounded-lg border border-black/10 bg-white px-5 py-4 transition duration-200 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20">
-                <p class="text-sm text-neutral-500 dark:text-neutral-400">Email</p>
-                <p class="mt-1 font-medium text-neutral-900 dark:text-neutral-100">kumar634@umn.edu</p>
-              </a>
-              <a href="https://www.linkedin.com/in/rohan-kumar" target="_blank" rel="noreferrer" class="rounded-lg border border-black/10 bg-white px-5 py-4 transition duration-200 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20">
-                <p class="text-sm text-neutral-500 dark:text-neutral-400">LinkedIn</p>
-                <p class="mt-1 font-medium text-neutral-900 dark:text-neutral-100">linkedin.com/in/rohan-kumar</p>
-              </a>
-              <a href="https://github.com/rohankumar" target="_blank" rel="noreferrer" class="rounded-lg border border-black/10 bg-white px-5 py-4 transition duration-200 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20">
-                <p class="text-sm text-neutral-500 dark:text-neutral-400">GitHub</p>
-                <p class="mt-1 font-medium text-neutral-900 dark:text-neutral-100">github.com/rohankumar</p>
-              </a>
-              <a href="https://rohank.dev" target="_blank" rel="noreferrer" class="rounded-lg border border-black/10 bg-white px-5 py-4 transition duration-200 hover:border-black/20 dark:border-white/10 dark:bg-neutral-900 dark:hover:border-white/20">
-                <p class="text-sm text-neutral-500 dark:text-neutral-400">Website</p>
-                <p class="mt-1 font-medium text-neutral-900 dark:text-neutral-100">rohank.dev</p>
-              </a>
-            </div>
-            <a href="./public/resume.pdf" download class="mt-6 inline-flex rounded-lg border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-800 transition duration-200 hover:-translate-y-0.5 hover:border-neutral-500 dark:border-neutral-700 dark:text-neutral-200 dark:hover:border-neutral-500">Download Resume</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer id="footer" class="border-t border-black/10 py-8 dark:border-white/10">
-      <div class="mx-auto max-w-6xl px-6 text-center text-sm text-neutral-600 dark:text-neutral-400">
-        <p>Rohan Kumar • 2026</p>
-        <p class="mt-1">Engineered with clarity, built for impact.</p>
-      </div>
+      <p>Copyright &#169; 2023 | Last Updated 8/29/23 | All Rights Reserved</p>
     </footer>
-
     <script src="script.js"></script>
   </body>
 </html>
