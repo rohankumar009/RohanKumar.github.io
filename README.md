@@ -1,21 +1,7 @@
-# Rohan Portfolio
+# Rohan Portfolio (Static)
 
-Single-page personal portfolio built with Next.js App Router, TypeScript, and Tailwind CSS.
+Single-page portfolio built with HTML, CSS, Tailwind CSS (CDN), and vanilla JavaScript.
 
-## Setup
+## Run locally
 
-```bash
-npm install
-npm run dev
-```
-
-## Build for production
-
-```bash
-npm run build
-npm run start
-```
-
-## Deploy
-
-This project is ready for Vercel deployment with automatic builds.
+Open `index.html` directly in a browser, or serve the folder with any static server.
