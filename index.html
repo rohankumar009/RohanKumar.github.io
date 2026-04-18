@@ -1,450 +1,373 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Maintenance</title>
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .maintenance-message {
-            text-align: center;
-            padding: 20px;
-            border: 2px solid #333;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-</head>
-
-<body>
-    <div class="maintenance-message">
-        <h1>Under Maintenance</h1>
-        <p>Will be back soon! 👨‍💻</p>
-
-    </div>
-</body>
-
-</html>
-
-
-
-
-
-<!-- 
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+    <meta
+      name="description"
+      content="Rahma Media crafts cinematic brand stories, launch campaigns, social content, and digital experiences for ambitious teams."
+    />
+    <title>Rahma Media | Creative Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#102C57",
+              paper: "#F8F0E5",
+              ember: "#DAC0A3",
+              citrus: "#EADBC8",
+              tide: "#DAC0A3",
+            },
+            fontFamily: {
+              display: ["Gelasio", "Georgia", "Times New Roman", "serif"],
+              body: ["Inter", "system-ui", "sans-serif"],
+            },
+            boxShadow: {
+              glow: "0 24px 80px rgba(16, 44, 87, .18)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      @keyframes ticker {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+      }
+      .ticker-track {
+        animation: ticker 26s linear infinite;
+      }
+      .ticker-track:hover {
+        animation-play-state: paused;
+      }
+    </style>
   </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Rohan Kumar</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Rohan Kumar</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+  <body class="bg-paper font-body text-ink antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-3 focus:text-paper"
+    >
+      Skip to content
+    </a>
+
+    <header class="fixed inset-x-0 top-0 z-50" data-header>
+      <nav class="main-nav content-container flex items-center justify-between py-5" aria-label="Main navigation">
+        <a href="#" class="group flex items-center" aria-label="Rahma Media home">
+          <span class="logo-wordmark transition">
+            Rahma Media
+          </span>
+        </a>
+
+        <div class="hidden items-center gap-8 px-6 py-3 text-sm font-medium lg:flex">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="portfolio.html">Portfolio</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#process">Process</a>
+          <a class="nav-link" href="#contact">Contact</a>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Rohan Kumar</h1>
-        <p class="section__text__p2">An Aspring Software Engineer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume-example.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/rohankumar09/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/rohankumar009'"
-          />
+
+        <a
+          href="#contact"
+          class="nav-cta hidden rounded-full border px-5 py-2.5 text-sm font-semibold transition lg:inline-flex"
+        >
+          Start a project
+        </a>
+
+        <button
+          class="grid h-10 w-10 place-items-center rounded-full bg-transparent lg:hidden"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          data-menu-button
+        >
+          <span class="menu-icon"></span>
+        </button>
+      </nav>
+
+      <div class="hidden border-t border-paper/10 bg-ink/96 py-6 text-paper backdrop-blur-xl lg:hidden" data-mobile-menu>
+        <div class="content-container grid gap-5 text-xl font-medium">
+          <a href="index.html">Home</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More About Me</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>Bachelors Of Science in Computer Science and Data Science<br /></p>
+    </header>
+
+    <main id="main">
+
+      <!-- Hero -->
+      <section class="relative flex flex-col overflow-hidden bg-paper text-paper" data-nav-theme="dark" data-hero>
+        <img
+          src="./assets/hero.jpg"
+          alt="Rahma Media creative studio"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+
+        <!-- Hero content — fills viewport height -->
+        <div class="relative flex min-h-screen flex-col justify-center">
+          <div class="hero-copy-container content-container w-full pb-16 pt-28 lg:pb-20 lg:pl-50 lg:pt-32 xl:pl-64">
+            <div class="max-w-4xl" data-reveal>
+              <h1 class="font-display text-paper">
+                <span class="block text-6xl leading-[0.88] text-[#FDCEDF] md:text-8xl lg:text-[8rem]">Rahma Media</span>
+                <span class="mt-3 block text-2xl leading-snug text-paper/70 md:text-3xl lg:text-4xl">builds brands people can feel.</span>
+              </h1>
+              <div class="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+                <p class="max-w-xl text-lg leading-[1.75] text-paper/70 md:text-xl">
+                  We build brands that speak with clarity, intention, and impact — from identity systems to integrated campaigns that drive real results.
+                </p>
+                <div class="flex shrink-0 flex-row gap-3">
+                  <a href="#about" class="rounded-full bg-paper px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:opacity-90">
+                    About us
+                  </a>
+                  <a href="#contact" class="rounded-full border border-paper bg-transparent px-6 py-3 text-sm font-semibold text-paper transition hover:-translate-y-0.5 hover:bg-paper hover:text-ink">
+                    Book a call
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="text-container">
-            <p>
-            Hi, my name is Rohan!
+        </div>
 
-            I'm a Junior at the University of Minnesota- Twin Cities pursuing a double major degree in the vast field of Computer Science and Data Science.
-            <br />
-            <br />
-            I have a mindset and personality which is devoted to success for myself and others around me. I enjoy being able to work in collaborative groups that not only benefit me but a variety of different contributors who share similar goals. I am very passionate about the work that I do and how it could potentially impact many people in the future.
+        <!-- Ticker — full width, section ends here -->
+        <div class="hero-ticker relative overflow-hidden border-y border-paper/12 py-5" aria-hidden="true">
+          <div class="ticker-track flex items-center whitespace-nowrap">
+            <span class="inline-flex items-center gap-10 pr-10 text-xs font-semibold uppercase tracking-[0.28em] text-paper/45">
+              <span class="text-paper/90">Social Media</span>
+              <span class="text-paper/20">—</span>
+              <span>Visual Identity</span>
+              <span class="text-paper/20">—</span>
+              <span class="text-paper/90">Brand Strategy</span>
+              <span class="text-paper/20">—</span>
+              <span>Digital Marketing</span>
+              <span class="text-paper/20">—</span>
+              <span class="text-paper/90">Content Creation</span>
+              <span class="text-paper/20">—</span>
+              <span>Social Media</span>
+              <span class="text-paper/20">—</span>
+              <span class="text-paper/90">Visual Identity</span>
+              <span class="text-paper/20">—</span>
+              <span>Brand Strategy</span>
+              <span class="text-paper/20">—</span>
+              <span class="text-paper/90">Digital Marketing</span>
+              <span class="text-paper/20">—</span>
+              <span>Content Creation</span>
+              <span class="text-paper/20">—</span>
+            </span>
+            <span class="inline-flex items-center gap-10 pr-10 text-xs font-semibold uppercase tracking-[0.28em] text-paper/45" aria-hidden="true">
+              <span class="text-paper/90">Social Media</span>
+              <span class="text-paper/20">—</span>
+              <span>Visual Identity</span>
+              <span class="text-paper/20">—</span>
+              <span class="text-paper/90">Brand Strategy</span>
+              <span class="text-paper/20">—</span>
+              <span>Digital Marketing</span>
+              <span class="text-paper/20">—</span>
+              <span class="text-paper/90">Content Creation</span>
+              <span class="text-paper/20">—</span>
+              <span>Social Media</span>
+              <span class="text-paper/20">—</span>
+              <span class="text-paper/90">Visual Identity</span>
+              <span class="text-paper/20">—</span>
+              <span>Brand Strategy</span>
+              <span class="text-paper/20">—</span>
+              <span class="text-paper/90">Digital Marketing</span>
+              <span class="text-paper/20">—</span>
+              <span>Content Creation</span>
+              <span class="text-paper/20">—</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="about-page bg-paper py-32 lg:py-40" data-nav-theme="light">
+        <div class="content-container grid gap-16 lg:grid-cols-[0.9fr_0.95fr] lg:items-start lg:gap-14 xl:px-12">
+          <div data-reveal>
+            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-tide">About</p>
+            <h2 class="mt-5 font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">A marketing agency with good taste.</h2>
+          </div>
+          <div class="w-full space-y-7 text-lg leading-[1.8] lg:max-w-[35rem] lg:justify-self-end" data-reveal>
+            <p>
+              Rahma Media is the kind of studio that looks at a brand, squints thoughtfully, says something about culture, and then makes the internet look a little more expensive.
+            </p>
+            <p>
+              We make campaigns, content, websites, launch ideas, little brand moments, big brand moments, and the occasional slide deck that makes everyone in the room nod like they just discovered strategy.
+            </p>
+            <p>
+              The vibe is simple: sharp visuals, clean messaging, good rhythm, fast edits, better taste.
             </p>
           </div>
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Skills</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Programming</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Intermediat</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Java</h3>
-                  <p>Intermediat</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>C Programming</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="services-page py-24 lg:py-28" data-nav-theme="light">
+        <div class="content-container min-h-[720px]">
+          <h2 class="services-title" data-reveal>Our Services</h2>
+
+          <div class="services-list" data-reveal>
+            <article class="service-row">
+              <h3>Free Consultation</h3>
+              <p>1 hr</p>
+              <a href="#contact">Book Now</a>
+            </article>
+            <article class="service-row">
+              <h3>Brand Direction</h3>
+              <p>1 hr<br /><span>US$100</span></p>
+              <a href="#contact">Book Now</a>
+            </article>
+            <article class="service-row">
+              <h3>Campaign Planning</h3>
+              <p>1 hr<br /><span>US$100</span></p>
+              <a href="#contact">Book Now</a>
+            </article>
+            <article class="service-row">
+              <h3>Content Management</h3>
+              <p>1 hr<br /><span>US$100</span></p>
+              <a href="#contact">Book Now</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section id="process" class="overflow-hidden bg-ink py-32 text-paper lg:py-40" data-nav-theme="dark">
+        <div class="content-container grid gap-16 lg:grid-cols-[0.9fr_0.95fr] lg:items-center lg:gap-14 xl:px-12">
+          <div data-reveal>
+            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember">Process</p>
+            <h2 class="mt-5 font-display text-5xl leading-[1.0] text-paper md:text-6xl lg:text-7xl">From signal to launch in weeks.</h2>
+            <p class="mt-8 max-w-lg text-lg leading-[1.8] text-paper/60">
+              The workflow is tight on purpose: clarify what needs to move, make the work, measure the response, then sharpen the next wave.
+            </p>
+          </div>
+
+          <div class="relative w-full max-w-[35rem] justify-self-end" data-reveal>
+            <img
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=85"
+              alt="Creative team workshopping a launch plan at a table"
+              class="aspect-[4/5] w-full object-cover md:aspect-[5/4]"
+            />
+            <div class="absolute inset-x-4 bottom-4 grid gap-4 bg-paper/92 p-6 text-ink backdrop-blur-xl sm:grid-cols-3">
+              <div class="process-step">
+                <span>01</span>
+                <strong>Map</strong>
+                <p>Audience, offer, story, channels.</p>
+              </div>
+              <div class="process-step">
+                <span>02</span>
+                <strong>Make</strong>
+                <p>Films, edits, pages, posts.</p>
+              </div>
+              <div class="process-step">
+                <span>03</span>
+                <strong>Move</strong>
+                <p>Launch, measure, optimize.</p>
+              </div>
             </div>
           </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Technologies</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Pandas</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Pygame</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Mongo DB</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Express JS</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git/Github</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="bg-citrus py-28 text-ink lg:py-36" data-nav-theme="light">
+        <div class="content-container grid gap-16 lg:grid-cols-[0.9fr_0.95fr] lg:items-center lg:gap-14 xl:px-12" data-reveal>
+          <h2 class="font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">Bring the idea. We'll make it impossible to ignore.</h2>
+          <p class="w-full text-lg leading-[1.8] text-ink/72 lg:max-w-[35rem] lg:justify-self-end">
+            Built for teams that want taste, speed, and a launch partner who can move from strategy to finished creative without losing the thread.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="bg-paper py-32 lg:py-40" data-nav-theme="light">
+        <div class="content-container grid gap-16 lg:grid-cols-[0.9fr_0.95fr] lg:items-start lg:gap-14 xl:px-12">
+      
+          <div data-reveal>
+            <p class="text-xs font-semibold uppercase tracking-[0.28em] text-ember">Contact</p>
+      
+            <h2 class="mt-5 font-display text-5xl leading-[1.0] md:text-6xl lg:text-7xl">
+              Tell us what you're building.
+            </h2>
+      
+            <!-- Added spacing here -->
+            <p class="mt-8 text-lg leading-[1.8] text-ink/65">
+              Share the rough version. The launch date, the audience, the problem, the dream.
+              We can shape the rest together.
+            </p>
+      
+            <!-- Added spacing here -->
+            <div class="mt-10 space-y-3">
+              <a class="block text-ink/80 transition hover:text-ink" href="mailto:rahma13swar@gmail.com">
+                rahma13swar@gmail.com
+              </a>
+      
+              <a class="block text-ink/80 transition hover:text-ink" href="tel:+966501877873">
+                Phone: +966 50 187 7873
+              </a>
             </div>
           </div>
+      
+          <form class="contact-form mt-12 lg:mt-0" data-contact-form>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <label>
+                <span>Name</span>
+                <input name="name" type="text" autocomplete="name" required />
+              </label>
+      
+              <label>
+                <span>Email</span>
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+            </div>
+      
+            <label>
+              <span>Project type</span>
+              <select name="project">
+                <option>Brand film</option>
+                <option>Social campaign</option>
+                <option>Website</option>
+                <option>Full launch</option>
+              </select>
+            </label>
+      
+            <label>
+              <span>What should this project accomplish?</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+      
+            <div class="flex flex-wrap items-center gap-5">
+              <button type="submit">Send inquiry</button>
+              <p class="text-sm text-ink/50" data-form-status aria-live="polite"></p>
+            </div>
+          </form>
+      
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-ink py-10 text-paper lg:py-12" data-nav-theme="dark">
+      <div class="content-container flex flex-col gap-5 text-sm text-paper/50 md:flex-row md:items-center md:justify-between">
+        <p class="font-display text-base font-normal tracking-tight text-paper/70">Rahma Media</p>
+        <p>© <span data-year></span> Rahma Media. Crafted for launch momentum.</p>
+        <div class="flex gap-6 font-medium text-paper/60">
+          <a class="transition hover:text-paper" href="#about">About</a>
+          <a class="transition hover:text-paper" href="#services">Services</a>
+          <a class="transition hover:text-paper" href="#contact">Contact</a>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:kumarrohan7110@gmail.com">kumarrohan7110@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/rohankumar09/">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2023 | Last Updated 8/29/23 | All Rights Reserved</p>
     </footer>
-    <script src="script.js"></script>
+
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
